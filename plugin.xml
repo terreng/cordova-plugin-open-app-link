@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="cordova-plugin-open-app-link"
-        version="1.0.0">
+        version="1.0.1">
     <name>cordova-plugin-open-app-link</name>
     <description>A Cordova plugin for opening a link only if there's an app installed to handle it.</description>
     <license>MIT</license>
