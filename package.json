@@ -1,0 +1,29 @@
+{
+  "name": "cordova-plugin-open-app-link",
+  "version": "1.0.0",
+  "description": "A Cordova plugin for opening a link only if there's an app installed to handle it.",
+  "cordova": {
+    "id": "cordova-plugin-open-app-link",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": "github:terreng/cordova-plugin-open-app-link",
+  "bugs": "https://github.com/terreng/cordova-plugin-open-app-link/issues",
+  "keywords": [
+    "cordova",
+    "deeplink",
+    "app link",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android",
+    "InAppSafariBrowser",
+    "Safari ViewController",
+    "Chrome Custom Tabs",
+    "InAppBrowser"
+  ],
+  "author": "terreng",
+  "license": "MIT",
+  "homepage": "https://github.com/terreng/cordova-plugin-open-app-link#readme"
+}

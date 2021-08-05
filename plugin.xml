@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-open-app-link"
+        version="1.0.0">
+    <name>cordova-plugin-open-app-link</name>
+    <description>A Cordova plugin for opening a link only if there's an app installed to handle it.</description>
+    <license>MIT</license>
+    <keywords>cordova,deeplink,app link,ecosystem:cordova,cordova-ios,cordova-android,InAppSafariBrowser,Safari ViewController,Chrome Custom Tabs,InAppBrowser</keywords>
+    <repo>https://github.com/terreng/cordova-plugin-open-app-link.git</repo>
+    <issue>https://github.com/terreng/cordova-plugin-open-app-link/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=3.4.0"/>
+    </engines>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="OpenAppLink">
+                <param name="android-package" value="com.terrengurule.openapplink.OpenAppLink"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/OpenAppLink.java" target-dir="src/com/terrengurule/openapplink" />
+
+        <js-module src="www/openapplink.js" name="OpenAppLink">
+            <clobbers target="OpenAppLink" />
+        </js-module>
+    </platform>
+</plugin>
