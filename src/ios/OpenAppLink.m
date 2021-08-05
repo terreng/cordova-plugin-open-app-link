@@ -5,16 +5,35 @@
 
 - (void)open:(CDVInvokedUrlCommand*)command
 {
-    CDVPluginResult* pluginResult = nil;
-    NSString* url = [command.arguments objectAtIndex:0];
+    NSString* url_string = [command.arguments objectAtIndex:0];
+    NSURL *url = [NSURL URLWithString:url_string];
 
-    if (url != nil && [url length] > 0) {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:url];
-    } else {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-    }
-
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    //if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url
+                                            options:@{UIApplicationOpenURLOptionUniversalLinksOnly: @YES}
+                                    completionHandler:^(BOOL success){
+                                        CDVPluginResult* pluginResult = nil;
+                                        if (success) {
+                                            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"true"];
+                                        } else {
+                                            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"false"];
+                                        }
+                                        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+                                    }];
+    //} else {
+    //    CDVPluginResult* pluginResult = nil;
+    //    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"NOPE1"];
+    //    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    //}
 }
 
 @end
+
+/*
+    <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+        <array>
+            <string>http</string>
+            <string>https</string>
+        </array>
+    </config-file>
+*/

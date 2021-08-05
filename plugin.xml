@@ -38,5 +38,6 @@
 
         <header-file src="src/ios/OpenAppLink.h"/>
         <source-file src="src/ios/OpenAppLink.m"/>
+        <!--<source-file src="src/ios/OpenAppLink.swift"/>-->
     </platform>
 </plugin>
