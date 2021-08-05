@@ -9,5 +9,19 @@ A Cordova plugin for opening a link only if there's an app installed to handle i
 
 ## Usage
 ```js
-//TODO
+OpenAppLink.open(url, function(opened) {
+    if (opened) {
+        //Opened link in native app successfully.
+    } else {
+        //No app installed to handle the link. Here you should fallback to browser.
+    }
+}, function(error) {console.error(error)})
 ```
+
+Note: If your app is configured to handle deep links, they *will* work with this.
+
+## How this works
+
+It's explained for Android here:
+
+[https://developer.chrome.com/docs/android/custom-tabs/best-practices/](https://developer.chrome.com/docs/android/custom-tabs/best-practices/)
