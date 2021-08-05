@@ -25,3 +25,5 @@ Note: If your app is configured to handle deep links, they *will* work with this
 It's explained for Android here:
 
 [https://developer.chrome.com/docs/android/custom-tabs/best-practices/](https://developer.chrome.com/docs/android/custom-tabs/best-practices/)
+
+[https://gist.github.com/andreban/1780525015f6449867a3](https://gist.github.com/andreban/1780525015f6449867a3)

@@ -13,6 +13,10 @@
         <engine name="cordova" version=">=3.4.0"/>
     </engines>
 
+    <js-module src="www/openapplink.js" name="OpenAppLink">
+        <clobbers target="OpenAppLink" />
+    </js-module>
+
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="OpenAppLink">
@@ -23,8 +27,16 @@
 
         <source-file src="src/android/OpenAppLink.java" target-dir="src/com/terrengurule/openapplink" />
 
-        <js-module src="www/openapplink.js" name="OpenAppLink">
-            <clobbers target="OpenAppLink" />
-        </js-module>
+    </platform>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="OpenAppLink">
+                <param name="ios-package" value="OpenAppLink"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/OpenAppLink.h"/>
+        <source-file src="src/ios/OpenAppLink.m"/>
     </platform>
 </plugin>
