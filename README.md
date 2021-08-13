@@ -4,8 +4,6 @@
 
 A Cordova plugin for opening a link only if there's an app installed to handle it. If there's no app that opens the link, it will fail. This is intended for use with cordova-plugin-safariviewcontroller, which has the unforunate side-effect of not respecting app deep links.
 
-This doesn't work in the latest beta of iOS 15 due to a bug, but it works fine on iOS 14.5, the latest release version. (As of Aug 5, 2021)
-
 ## Install
 `cordova plugin add cordova-plugin-open-app-link`
 
