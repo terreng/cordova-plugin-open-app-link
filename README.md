@@ -18,7 +18,7 @@ OpenAppLink.open(url, function(opened) {
 }, function(error) {console.error(error)})
 ```
 
-Note: If your app is configured to handle deep links, they *will* work with this.
+Note: If your app is configured to handle deep links/univeral links, on Android they will attempt to open and this will return true, and on iOS this will always return false.
 
 ## How this works
 
@@ -27,3 +27,7 @@ It's explained for Android here:
 [https://developer.chrome.com/docs/android/custom-tabs/best-practices/](https://developer.chrome.com/docs/android/custom-tabs/best-practices/)
 
 [https://gist.github.com/andreban/1780525015f6449867a3](https://gist.github.com/andreban/1780525015f6449867a3)
+
+For iOS:
+
+[https://developer.apple.com/documentation/uikit/uiapplication/1648685-openurl](https://developer.apple.com/documentation/uikit/uiapplication/1648685-openurl)
