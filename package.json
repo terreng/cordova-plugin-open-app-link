@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-open-app-link",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Cordova plugin for opening a link only if there's an app installed to handle it.",
   "cordova": {
     "id": "cordova-plugin-open-app-link",
