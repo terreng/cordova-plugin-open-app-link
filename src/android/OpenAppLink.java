@@ -32,7 +32,7 @@ public class OpenAppLink extends CordovaPlugin {
         Context context = this.cordova.getContext();
         String url = data.getString(0);
             
-        if (launchNativeBeforeApi30(context, Uri.parse(url))) {
+        if (launchUri(context, Uri.parse(url))) {
 
 			callbackContext.success("true");
 
@@ -87,8 +87,6 @@ public class OpenAppLink extends CordovaPlugin {
         return packageNameSet;
     }
 
-    /* Cordova doesn't support Android api level 30 yet
-
     static boolean launchUri(Context context, Uri uri) {
         boolean launched = Build.VERSION.SDK_INT >= 30 ?
                 launchNativeApi30(context, uri) :
@@ -109,6 +107,5 @@ public class OpenAppLink extends CordovaPlugin {
             return false;
         }
     }
-    */
 	
 }
